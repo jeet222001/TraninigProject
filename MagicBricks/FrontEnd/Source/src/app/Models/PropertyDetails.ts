@@ -1,0 +1,31 @@
+export default interface PropertyDetail {
+    PropertyId:number;
+    BrsId:number;
+    PropertyDescription:string;
+    PropertyTypeId:number;
+    UserId:number;
+    AgeOfConstruction:string;
+    AvailableFrom:string;
+    Balconies:number;
+    Bathrooms:number;
+    Bedrooms:number;
+    BgcId:number;
+    floorNo:number;
+    furnishedStatus:string;
+    PossessionStatus:string;
+    Price:number;
+    SuperArea:number;
+    TokenAmount:number;
+    totalFloors:number;
+    AddressLine1:string;
+    AddressLine2:string;
+    Pincode:number;
+    CityName:string;
+    StateName:string;
+    CountryName:string;
+    imagename:string;
+    DenseRank:number;
+    name:string;
+    Email:string;
+    PhoneNo:number;
+}

@@ -1,0 +1,99 @@
+<footer class="mb-footer">
+  <section class="mb-footer__main">
+    <div class="about">
+        <div class="container">
+        <div class="row small">
+            <div class="col-md-6">
+                <p class="fs-5">About Magicbricks</p>
+                <p>
+                    Magicbricks is a full stack service provider for all real estate needs,
+                    with 15+ services including home loans, pay rent, packers and movers,
+                    legal assistance, property valuation, and expert advice. As the largest platform for buyers and sellers
+                    of property to connect in a transparent manner, Magicbricks has
+                    an active base of over 15 lakh property listings
+                </p>
+                <ul class="list-unstyled mb-footer__main__social-links d-md-flex">
+                    <li><a href="" class="google-play"></a></li>
+                    <li> <a href="" class="apple-store"></a></li>
+                    <li><a href="" class="facebook"></a></li>
+                    <li><a href="" class="twitter"></a></li>
+                    <li><a href="" class="linkedin"></a></li>
+                    <li><a href="" class="youtube"></a></li>
+                    <li><a href="" class="instagram"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p class="fs-5">Real Estate in India</p>
+                <p>
+                    <a href="" class="about-page-link">Property in Delhi NCR</a> | <a href="" class="about-page-link">Property in Mumbai</a> | <a href="" class="about-page-link">Property in
+                        Chennai</a> |<a href="" class="about-page-link">Property in Pune</a> | <a href="" class="about-page-link">Property in Noida </a>
+                    | <a href="" class="about-page-link">Property in Gurgaon</a> | <a href="" class="about-page-link">Property in Bangalore</a> | <a href="" class="about-page-link">Property in
+                        Ahmedabad</a>
+                </p>
+                <p class="fs-5"> New Projects in India</p>
+                <p>
+                    <a href="" class="about-page-link"> New Projects in Delhi/NCR</a> | <a href="" class="about-page-link">New Projects in Mumbai</a>
+                    | <a href="" class="about-page-link">New Projects in Chennai</a>  | <a href="" class="about-page-link">New Projects in Pune</a>  |
+                  <a href="" class="about-page-link">New Projects in Noida</a>   | <a href="" class="about-page-link">New Projects in Gurgaon</a> 
+                    | <a href="" class="about-page-link">New Projects in Bangalore</a>  | <a href="" class="about-page-link">New Projects in Ahmedabad</a> 
+                </p>
+            </div>
+            
+        </div>
+      
+    </div>
+    <div class="mb-footer__secondary">
+        <div class="container">
+            <div class="row">
+                <ul class="list-unstyled d-md-flex justify-content-between">
+                    <li><a href="" class="footer-link">Sitemap</a></li>
+                    <li><a href="" class="footer-link">Terms & Conditions</a></li>
+                    <li><a href="" class="footer-link"> Privacy Policy</a></li>
+                    <li><a href="" class="footer-link">Blog</a></li>
+                    <li><a href="" class="footer-link">Careers</a></li>
+                    <li><a href="" class="footer-link">Testimonials</a></li>
+                    <li><a href="" class="footer-link">Feedback</a></li>
+                    <li><a href="" class="footer-link">Unsubscribe</a></li>
+                    <li><a href="" class="footer-link">Help Center</a></li>
+                    <li><a href="" class="footer-link">Sales Enquiry</a></li>
+                    <li><a href="" class="footer-link">Buy Our Services</a></li>
+                </ul>
+           
+        </div>
+        </div>
+    </div>
+ 
+    <div   class="container">
+        <div class="row">
+            <p [ngClass]="{'show-less': showShortDesciption}" class="small">Disclaimer: Magicbricks Realty Services Limited is only an 
+                intermediary offering its platform to advertise properties of Seller for
+                 a Customer/Buyer/User coming on its Website and is not and cannot be a party 
+                 to or privy to or control in any manner any transactions between the Seller and
+                  the Customer/Buyer/User. All the offers and discounts on this Website have been 
+                  extended by various Builder(s)/Developer(s) who have advertised their products.
+                  Magicbricks is only communicating the offers and not selling or rendering any of 
+                  those products or services. It neither warrants nor is it making any representations
+                   with respect to offer(s) made on the site. Magicbricks Realty Services Limited shall
+                    neither be responsible nor liable to mediate or resolve any disputes or disagreements 
+                    between the Customer/Buyer/User and the Seller and both Seller and Customer/Buyer/User 
+                    shall settle all such disputes without involving Magicbricks Realty 
+                    Services Limited in any manner.</p>
+                    <a class="text-decoration-none text-black text-end readmore" (click)="alterDescriptionText()">
+                        {{ showShortDesciption ? 'read more': 'read less' }}
+                    </a>
+        </div>
+      
+    </div>
+    <div class="container-fluid">
+        <div class="row bg-black text-white">
+            <p class="footer-end-text">
+            All trademarks, logos and names are properties of their 
+            respective owners. All Rights Reserved. © Copyright Magicbricks Realty Services Limited.
+            </p>
+        </div>
+    </div>
+
+
+    </div>
+  </section>
+</footer>

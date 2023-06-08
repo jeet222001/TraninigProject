@@ -1,0 +1,89 @@
+<div style="background-color: rgb(245, 243, 243);">
+    <div class="container shadow p-5" style="background-color: white;">
+        <div class="row">
+       
+            <div class="col-3 my-4">
+                <label for="city" class="small">City</label>
+                <select name="city" class="form-select" id="city">
+                    <option [ngValue]="null" selected>select city</option>
+                    <ng-container *ngFor="let city of Cities">
+                        <option class="text-dark small" [ngValue]="city.cityId">{{city.name}}</option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+    
+        <div class="row cards mb-5">
+            <div class="col-md-6 col-lg-4 col-xl-3 col-sm-12 center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h4>Flats in Ahmedabad</h4>
+                        </div>
+                    </div>
+                    <img src="../../../assets/images.jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <a class="btn btn-outline-dark" [routerLink]="['/propertylist/',23]">
+                                See Flats Here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 col-sm-12 center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h4>Residental House in Ahmedabad</h4>
+                        </div>
+                    </div>
+                    <img src="../../../assets/download (1).jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <a class="btn btn-outline-dark" [routerLink]="['/propertylist/',24]">
+                                See Residental House Here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 col-sm-12 center">
+                <div [routerLink]="['/propertyDetails']" routerLinkActive="router-link-active" class="card"
+                    style="width: 18rem;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h4>PentHouse in Ahmedabad</h4>
+                        </div>
+                    </div>
+                    <img src="../../../assets/download (2).jfif" style="height: 160px!important ;" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <a class="btn btn-outline-dark" [routerLink]="['/propertylist/',30]">
+                                See PentHouse Here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 col-sm-12 center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h4>Villa in Ahmedabad</h4>
+                        </div>
+                    </div>
+                    <img src="../../../assets/download (3).jfif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <a class="btn btn-outline-dark" [routerLink]="['/propertylist/',27]">
+                                See Villas Here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

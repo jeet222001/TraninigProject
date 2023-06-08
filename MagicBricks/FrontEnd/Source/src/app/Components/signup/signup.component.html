@@ -1,0 +1,132 @@
+<div class="contentArea">
+    <div class="row">
+        <div class="d-none d-md-flex leftPanel col p-5"
+            style="height: 700px; background: url(../../assets/leftPanel-Bg.jpg);background-repeat:no-repeat;background-size: 200% 100%;">
+            <div class="text-light leftCont">
+                <span class="arrow"></span>
+                <h3 class="">
+                    Things you Can Do with
+                    <br>
+                    Magicbricks Account
+                </h3>
+                <ul class="list-unstyled text-white-50 small">
+                    <li class="my-3"> <span class="fa fa-check mx-2"></span> Post one Single Property for FREE</li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Set property alerts for your requirement
+                    </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Get accessed by over 1 Lakh buyers </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Showcase your property as Rental, PG or for
+                        Sale</li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Get instant queries over Phone, Email and SMS
+                    </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Performance in search & Track responses &
+                        views online </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Add detailed property information & multiple
+                        photos per listing</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="rightPanel col">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="form">
+                        <form class="" action="">
+                            <div class="overflow-scroll">
+                                <div class="formCont">
+                                    <form [formGroup]="SignupForm">
+                                        <p class="fs-5">Sign Up</p>
+                                        <p></p>
+                                        <span class="text-secondary">I am</span>
+                                        <div class="d-md-flex mx-2">
+                                            <ng-container *ngFor="let u of UserTypes">
+                                                <input formControlName="UserTypeId" type="radio" [id]="u.typeName"
+                                                    [value]="u.typeId">
+                                                <label class="text-secondary fs-6 mx-1"
+                                                    [for]="u.typeName">{{u.typeName}}</label>
+                                            </ng-container>
+                                        </div>
+                                        <!-- <div class="">
+                                            <div *ngFor="let item of countries">{{item.shortname}}</div>
+                                            <div class="card-footer pb-0 pt-3">
+                                                <jw-pagination [items]="countries2" (changePage)="onChangePage($event)">
+                                                </jw-pagination>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-floating my-3">
+                                            <input required formControlName="Name" type="Name" class="form-control InputText"
+                                                id="Name" placeholder="Enter Name">
+                                            <label for="Name">Name</label>
+                                            <div *ngIf="
+                                        SignupForm.get('Name')!.invalid && SignupForm.get('Name')!.touched
+                                      " class="alert text-danger alert-danger w-100">
+                                                name is required.
+                                            </div>
+                                        </div>
+                                        <div class="form-floating my-3">
+                                            <input formControlName="Email" type="email" class="form-control InputText"
+                                                id="email" placeholder="Enter Email">
+                                            <label for="email">email</label>
+                                            <div *ngIf="SignupForm.get('Email')!.invalid && SignupForm.get('Email')!.touched"
+                                                class="alert w-100 alert-danger text-danger">
+
+                                                <div *ngIf="SignupForm.get('Email')!.errors?.['pattern']">
+                                                    Enter Valid Email Address
+                                                </div>
+                                                <div *ngIf="SignupForm.get('Email')!.errors?.['required']">
+                                                    Email is required.
+                                                </div>
+                                                
+                                            </div>
+
+                                        </div>
+                                        <div class="form-floating my-3">
+                                            <input formControlName="Password" type="password"
+                                                class="form-control InputText" id="password"
+                                                placeholder="Enter password">
+                                            <label for="password">password</label>
+                                            <div *ngIf="SignupForm.get('Password')!.invalid && SignupForm.get('Password')!.touched"
+                                            class="alert w-100 alert-danger text-danger">
+                                            <div *ngIf="SignupForm.get('Password')!.errors?.['pattern']">
+                                                Password Must be strong: one capital char., one special character, and minimum 8 characters 
+                                            </div>
+                                            <div *ngIf="SignupForm.get('Password')!.errors?.['required']">
+                                                Password is required.
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="form-floating my-3">
+                                            <input formControlName="PhoneNo" type="text" class="form-control InputText"
+                                                id="Mobile" placeholder="Enter Mobile">
+                                            <label for="Mobile">Mobile No.</label>
+                                            <div *ngIf="f.PhoneNo.touched && f.PhoneNo.invalid" class="alert alert-danger">  
+                                                <div *ngIf="f.PhoneNo.errors?.['required']">Mobile Number is required.</div>  
+                                                <div *ngIf="f.PhoneNo.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>  
+                                            </div>  
+                                        </div>
+                                        <p class="small fw-bold mt-5 w-100">
+                                            <input [(ngModel)]="agreeterms" [ngModelOptions]="{standalone: true}"
+                                                type="checkbox" name="agreeterms" id="agreeterms" />
+                                            I agree to Magicbricks <u>T&C</u> , <u>Privacy Policy</u> ,<u>Cookie
+                                                Policy</u> &
+                                        </p>
+                                        <button class="w-100 btn btn-danger" (click)="PostUser()"
+                                            [disabled]="!agreeterms">Send OTP</button>
+                                        <p class="text-center mt-3 text-secondary"> Already registered? <a
+                                                class="text-danger" [routerLink]="['/login']">Login Now</a></p>
+
+                                        <span *ngIf="msg" class="alert alert-success">OTP verified successfully</span>
+                                        <div class="" *ngIf="ref">
+                                            <input type="text" formControlName="Otpno" class="form-control" />
+                                            <button class="btn btn-danger" (click)="sendotp()">VerifyOtp & signup</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

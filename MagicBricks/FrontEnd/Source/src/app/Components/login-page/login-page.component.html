@@ -1,0 +1,98 @@
+<div class="contentArea">
+    <div class="row">
+        <div class="d-none d-md-flex leftPanel col p-5"
+            style="height: 700px; background: url(../../../assets/leftPanel-Bg.jpg);background-repeat:no-repeat;background-size: 200% 100%;">
+            <div class="text-light leftCont">
+                <span class="arrow"></span>
+                <h3 class="">
+                    Things you Can Do with
+                    <br>
+                    Magicbricks Account
+                </h3>
+                <ul class="list-unstyled text-white-50 small">
+                    <li class="my-3"> <span class="fa fa-check mx-2"></span> Post one Single Property for FREE</li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Set property alerts for your requirement
+                    </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Get accessed by over 1 Lakh buyers </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Showcase your property as Rental, PG or for
+                        Sale</li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Get instant queries over Phone, Email and SMS
+                    </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Performance in search & Track responses &
+                        views online </li>
+                    <li class="my-3"><span class="fa fa-check mx-2"></span>Add detailed property information & multiple
+                        photos per listing</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="rightPanel col">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="form">
+                        <form action="">
+                            <div class="registrationWrapper">
+                                <div class="formCont">
+                                    <form [formGroup]="LoginForm">
+                                        <p class="fs-5">Login</p>
+                                        <div class="form-floating my-3">
+                                            <input formControlName="EmailOrPhone" type="EmailOrPhone" class="form-control InputText"
+                                                id="EmailOrPhone" placeholder="Enter EmailOrPhone">
+                                            <label for="email">Enter Email or Phone No</label>
+                                            <div *ngIf="LoginForm.get('EmailOrPhone')!.invalid && LoginForm.get('EmailOrPhone')!.touched"
+                                            class="alert w-100 alert-danger text-danger">
+                                            <div *ngIf="LoginForm.get('EmailOrPhone')!.errors?.['required']">
+                                                Email OR Phone Number required For Login
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="form-floating my-3">
+                                            <input formControlName="pswd" type="password"
+                                                class="form-control InputText" id="pswd"
+                                                placeholder="Enter password">
+                                            <label for="pswd">Password</label>
+                                            <div *ngIf="LoginForm.get('pswd')!.invalid && LoginForm.get('pswd')!.touched"
+                                            class="alert w-100 alert-danger text-danger">
+                                            <div *ngIf="LoginForm.get('pswd')!.errors?.['required']">
+                                                Password is required.
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <button class="btn btn-danger w-100" (click)="Login()">Login</button>
+                                        <a href=""
+                                            class=" text-decoration-none text-secondary fs-6 float-end mt-2"><span>Need
+                                                Help?</span></a>
+
+                                        <div class="mt-4">
+
+                                            <p class="text-center mx-5">Or login using </p>
+
+                                        </div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="d-md-flex justify-content-center justify-content-evenly">
+                                                    <div class=""><span
+                                                            class="fa fa-facebook-f text-light bg-primary fa-2x p-2 rounded-circle mx-2"></span>Facebook
+                                                        &nbsp;
+                                                    </div>
+                                                    <div class=""><span
+                                                            class="fa fa-google text-danger bg-lignt fa-2x p-2 rounded-circle mx-2"></span>Google
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5 text-center">
+                                            <p>New to Magicbricks? <a
+                                                    class="text-decoration-none text-danger fw-semibold"
+                                                    [routerLink]="['/signup']">Sign Up</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

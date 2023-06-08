@@ -1,0 +1,166 @@
+<div class="" style="background-color: lightgray;">
+    <div class="container" >
+        <div class="row p-5 center " style="background-color: white;" *ngFor="let p of Properties">
+            <div class="col-md-10">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="d-md-flex">
+                            <div class="mx-2">
+                                <h3 class="fs-5 fw-bold mb-3 text-dark">
+                                    <span class="rupees ">₹{{p.price}}</span>
+                                </h3>
+                            </div>
+                            <div class="">
+                                <div class="mb-srp__card__tags">
+                                    <span class="mb-srp__card__tags--tick no-tick p-1 m-1">
+                                     <span class="fa fa-check"></span>   Only on Magicbricks
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <p>{{p.propertyDescription}}</p>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="">
+                                <img src="{{path+p.imagename}}" alt=""
+                                    class="mb-srp__card__photo__fig--graphic rounded-top rounded-bottom" />
+                            </div>
+                            <div class="">
+                                <div class="d-md-flex">
+                                    <div class="bg-light mx-2 text-dark "><span class="fa fa-bed"></span> {{p.bedrooms}}
+                                        beds |</div>
+                                    <div class="bg-light mx-2 text-dark "><span class="fa fa-bathtub"></span>
+                                        {{p.bathrooms}} baths |</div>
+                                    <div class="bg-light mx-2 text-dark "><span
+                                            class="fa fa-building"></span>{{p.balconies}} Balconies |</div>
+                                    <div class="bg-light mx-2 text-dark "><span class="fa fa-table"></span>
+                                        {{p.furnishedStatus}}</div>
+                                </div>
+                                <div class="d-md-flex  my-2">
+                                    <div class="mx-2">
+                                        <div class="mb-srp__card__summary--label">Carpet Area</div>
+                                        <div class="mb-srp__card__summary--value">{{p.carpetArea}}</div>
+                                    </div>
+                                    <div class="mx-2">
+                                        <div class="mb-srp__card__summary--label">status</div>
+                                        <div class="mb-srp__card__summary--value">{{p.possessionStatus}}</div>
+                                    </div>
+    
+                                    <div class="mx-2">
+                                        <div class="mb-srp__card__summary--label">furnishedStatus</div>
+                                        <div class="mb-srp__card__summary--value">{{p.furnishedStatus}}</div>
+                                    </div>
+    
+                                    <div class="mx-2">
+                                        <div class="mb-srp__card__summary--label">Age of Construction</div>
+                                        <div class="mb-srp__card__summary--value">{{p.AgeOfConstruction}}</div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="center text-center mt-2 d-md-flex justify-content-evenly">
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn rounded-pill fw-bold btn-danger">
+                                    Contact Owner
+                                </a><br>
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn rounded-pill fw-bold btn-outline-danger">
+                                    Get Phone No.
+                                </a>
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLongTitle">Enter Your Details</h5>
+                                          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form [formGroup]="ContactOwnerForm">
+                                                <div class="form-floating mb-3">
+                                                    <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                    <label class="text-start" for="floatingInput">Your Name</label>
+                                                  </div>
+                                                <div class="form-floating mb-3">
+                                                    <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                    <label class="text-start" for="floatingInput">Email</label>
+                                                  </div>
+                                                  <div class="form-floating mb-3">
+                                                    <input formControlName="phone" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                    <label class="text-start" for="floatingInput">Mobile Number</label>
+                                                  </div>
+                                            </form>
+                                        
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                                          <button type="button" (click)="ContactOwner()" data-bs-dismiss="modal" class="btn rounded-pill btn-danger">Get Contact Details</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <br>
+                                <a class="text-decoration-underline  text-secondary">
+                                    Share Feedback
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card shadow mt-5 p-4">
+                    <h2 class="fs-3">More Details</h2>
+                    
+                    <p class="fw-light fs-6">Property Price &nbsp;&nbsp;&nbsp; <span class="fw-bold">₹{{p.price}}</span> </p> 
+                    <p class="fw-light fs-6">Deposite / Token &nbsp;&nbsp;&nbsp;  <span class="fw-bold"> ₹{{p.tokenAmount}}</span></p> 
+                    <p class="fw-light fs-6">Address &nbsp;&nbsp;&nbsp; <span class="fw-bold">{{p.addressLine1}}</span></p>
+                    <p class="fw-light fs-6">Furnishing &nbsp;&nbsp;&nbsp; <span class="fw-bold">{{p.furnishedStatus}}</span></p>
+                    <p class="fw-light fs-6">Age of Construction &nbsp;&nbsp;&nbsp; <span class="fw-bold">{{p.ageOfConstruction}}</span></p>
+                    <div class="align-self-start mt-3">
+                        <div class="mt-2 d-md-flex justify-content-evenly">
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn rounded-pill fw-bold btn-danger">
+                                Contact Owner
+                            </a><br>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLongTitle">Enter Your Details</h5>
+                                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form [formGroup]="ContactOwnerForm">
+                                            <div class="form-floating mb-3">
+                                                <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                <label class="text-start" for="floatingInput">Your Name</label>
+                                              </div>
+                                            <div class="form-floating mb-3">
+                                                <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                <label class="text-start" for="floatingInput">Email</label>
+                                              </div>
+                                              <div class="form-floating mb-3">
+                                                <input formControlName="phone" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                <label class="text-start" for="floatingInput">Mobile Number</label>
+                                              </div>
+                                        </form>
+                                    
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                                      <button type="button" (click)="ContactOwner()" data-bs-dismiss="modal" class="rounded-pill btn btn-danger">Get Contact Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

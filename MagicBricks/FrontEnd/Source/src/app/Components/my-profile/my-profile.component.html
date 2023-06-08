@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-auto">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h1>{{user.name}}</h1>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        {{user.email}}
+                    </p>
+                    <p>{{user.phoneNo}}</p>
+                </div>
+                <div class="card-footer">
+                    <a [routerLink]="['/dashboard']">My Properties</a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

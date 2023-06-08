@@ -1,0 +1,112 @@
+<nav class="navbar navbar-light bg-danger">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col">
+                <div class="ms-5">
+
+                    <a href="" class="lead text-light text-decoration-none fs-2 fw-bolder">Magicbricks</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <button class="dropbtn bg-danger mt-2 mx-2 text-white lead fs-5">Ahemdabad</button>
+                    <div class="dropdown-content">
+                        <div class="container-fluid">
+                            <div class="row justify-content-evenly mt-3">
+                                <div class="col">
+                                    <div class="row">
+                                        <p class="fw-bold">Nearby Cities</p>
+                                        <div class="col mx-2 small">
+                                            <div>Vadodara</div>
+                                        </div>
+                                        <div class="col mx-2 small">
+                                            <div>Rajkot</div>
+                                        </div>
+                                        <div class="col mx-2 small">
+                                            <div>Surat</div>
+                                        </div>
+                                        <div class="col mx-2 small">
+                                            <div>Gandhinagar</div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 w-100">
+                                        <p class="fw-bold">Popular Cities</p>
+                                        <div class="col small">
+                                            <div>Banglore</div>
+                                            <div>Mumbai</div>
+                                            <div>Pune</div>
+                                        </div>
+                                        <div class="col small">
+                                            <div>Chennai</div>
+                                            <div>Hyderabad</div>
+                                            <div>Kolkata</div>
+                                        </div>
+                                        <div class="col small">
+                                            <div>Ahemdabad</div>
+                                            <div>Navi Mumbai</div>
+                                            <div>Thane</div>
+                                        </div>
+                                        <div class="col small">
+                                            <div>Noida</div>
+                                            <div>Gurgaon</div>
+                                            <div>Ghaziabad</div>
+                                        </div>
+                                        <div class="col small">
+                                            <div>Faridabad</div>
+                                            <div>Greater Noida</div>
+                                            <div>New Delhi</div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row">
+                                        <p>Other Cities</p>
+                                        <ng-container *ngFor="let city of Cities | slice:0:75;">
+                                            <div class="col-1 mx-4">
+                                                <div class="small" style="width: 300px!important;">{{city.name}}</div>
+                                            </div>
+                                        </ng-container>
+
+                                    </div> -->
+                                </div>
+                                <div class="col">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="dropdown mx-4">
+                    <button class="dropbtn bg-danger mt-2 mx-5 text-white lead fs-5">{{isLoggedIn?'Logout':'Login'}}</button>
+                    <div class="dropdown-content" style="min-width:250px; width: 100%;">
+                        <div class="container-fluid">
+                            <div class="row mx-3">
+                                <div class="">
+                                    My Activity
+                                </div>
+                                <div class="">Contacted Properties</div>
+                                <div class="">Viewed Properties</div>
+                                <div class="">Sortlisted Properties</div>
+                                <div class="">Searches </div>
+                                <hr>
+                                <div class="">Recommendations</div>
+                                <div class=""><a [routerLink]="['/myprofile']" class="text-decoration-none">My Profile</a></div>
+                                <hr>
+                                <div class="">
+                                    <button *ngIf="!isLoggedIn" class="btn-danger btn w-100 rounded-pill" [routerLink]="['/login']">Login</button>
+                                    <button *ngIf="isLoggedIn" class="btn-danger btn w-100 rounded-pill" (click)="Logout()" [routerLink]="['/home']">Logout</button>
+                                </div>
+                                <div class="">
+                                    <span>new to magicbricks?<a class="text-danger" [routerLink]="['/signup']"
+                                            >Signup</a> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<app-navbar></app-navbar>

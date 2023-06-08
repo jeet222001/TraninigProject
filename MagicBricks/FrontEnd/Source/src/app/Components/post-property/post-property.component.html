@@ -1,0 +1,424 @@
+<div class="" style="background-color: rgb(232, 229, 229);">
+    <div style="background-color: white;" class="container">
+        <div class="row">
+            <div class="mt-5 ms-5 pt-5 mb-5"
+                style="background: url(https://post.magicbricks.com/static/images/postPropHeader.png);background-repeat: no-repeat;background-position: 32%;">
+                <h2 class="fw-bolder">Sell or Rent your Property</h2>
+                <p class="fw-bold">We've over 15 Lac buyers and tenants for you!
+                </p>
+                <div class="container mx-4">
+                    <div class="row">
+                        <div class="col">
+                            <p class="small fw-bold">You are posting this property for
+                                <span class="text-decoration-line-through">₹5000</span>
+                                <span class="bg-warning p-1 m-1 rounded-pill">FREE!</span>
+                            </p>
+                        </div>
+
+                        <div class="">
+                            <div class="small"><span class="fa fa-check"></span> Free Professional Photoshoot</div>
+                            <div class="small"><span class="fa fa-check"></span> Get Contact details upto 5 Responses
+                            </div>
+                            <div class="small"><span class="fa fa-check"></span> Access to 15 Lac Buyers and Tenants
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="shadow p-5" action="" [formGroup]="PropertyForm">
+                <div *ngIf="users" class="mb-5" formGroupName="user">
+                    <h2 class="fw-semibold">Personal Details</h2>
+
+                    <div class="d-md-flex my-4">
+                        I am
+                        <div class="mx-2">
+                            <ng-container *ngFor="let p of PropertyPoster">
+                                <input type="radio" [value]="p.typeId" formControlName="UserTypeId" id="{{p.typeName}}"
+                                    class="mx-1" />
+                                <label class="form-label" for="{{p.typeName}}">{{p.typeName}}</label>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="my-3">
+                            <label for="Name" class="small">Name</label>
+                            <input value="{{users.Name}}" type="text" id="Name"
+                                class="p-2 w-100 border-none border inputText" placeholder="Name"
+                                formControlName="Name" />
+                        </div>
+                        <div class="my-3 row">
+                            <label for="Mobile" class="small">Mobile</label>
+                            <div class="col-md-4 col-6">
+                                <select name="" class="form-select border border-none inputSelect"
+                                    id="countrydrop"><span class="fa fa-caret-down text-secondary"></span>
+                                    <ng-container *ngFor="let country of Countries">
+                                        <option class="" value="country.name">{{country.shortname +'
+                                            '+country.phonecode}}</option>
+                                        <hr>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <input value="{{users.PhoneNo}}" type="number" id="Mobile"
+                                    class="p-2 w-100 border-none border inputText" placeholder="Enter Mobile"
+                                    formControlName="Mobile" />
+                            </div>
+
+                        </div>
+                        <div class="my-3">
+                            <label for="Email" class="small">Email</label>
+                            <input value="{{users.Email}}" type="text" id="Email"
+                                class="p-2 w-100 border-none border inputText" placeholder="Enter Email"
+                                formControlName="Email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <h2 class="fw-bold">Property Details</h2>
+                    <div class="d-md-flex mt-4">
+                        For
+                        <div class="mx-2">
+                            <input type="radio" [value]="2" name="brsId" id="Sale" class="mx-1" [(ngModel)]="brsId"
+                                formControlName="brsId" />
+                            <label class="form-label" for="Sale">Sale</label>
+                        </div>
+                        <div class="mx-2">
+                            <input type="radio" [value]="3" name="brsId" id="Rent/Lease" class="mx-1"
+                                [(ngModel)]="brsId" formControlName="brsId" />
+                            <label class="form-label" for="Rent/Lease">Rent/ Lease</label>
+                        </div>
+                        <div class="mx-2">
+                            <input type="radio" [value]="1" name="brsId" id="PGHostel" class="mx-1" [(ngModel)]="brsId"
+                                formControlName="brsId" />
+                            <label class="form-label" for="PGHostel">PG/Hostel
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-5">
+                        <label for="PropertyType" class="small">PropertyType</label>
+                        <select name="PropertyType" [(ngModel)]="propertyTypeId" formControlName="propertyTypeId"
+                            class="form-select border border-none " id="PropertyType">
+                            <option disabled value="-1">Select Property Type</option>
+                            <ng-container *ngFor="let Type of AppObjTypes">
+                                <option class="text-dark" [ngValue]="Type.typeId">{{Type.typeName}}</option>
+                            </ng-container>
+                        </select>
+                    </div>
+                    <div class="mt-3">
+                        <label class="small" for="propdesc">Property Discription</label><br>
+                        <textarea type="textarea" rows="5" cols="58" class="form-control"
+                            formControlName="propertyDescription" name="" id="propdesc" class=""></textarea>
+                    </div>
+                </div>
+                <div class="col-4 mt-5" formArrayName="locations">
+                    <h2 class="fw-bold">Property Location</h2>
+                    <div class="" *ngFor="let l of PropertyLocation.controls;let j=index">
+                        <div class="" [formGroupName]="j">
+                            <div class="my-3">
+                                <label for="city" class="small">City</label>
+                                <select name="city" formControlName="CityId" class="form-select" id="city">
+                                    <option [ngValue]="null" selected>select city</option>
+                                    <ng-container *ngFor="let city of Cities">
+                                        <option class="text-dark small" [ngValue]="city.cityId">{{city.name}}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="my-3">
+                                <label for="Locality" class="small">Locality</label>
+                                <input type="text" class="p-2 w-100 border-none border inputText"
+                                    placeholder="Enter Locality" formControlName="AddressLine1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="col-8 mt-5" formArrayName="propertyFacilities">
+                        <h2 class="fw-bold">Property Features</h2>
+                        <div class="" *ngFor="let f of PropertyFeatures.controls;let j=index">
+                            <div class="" [formGroupName]="j">
+                                <div class="container">
+                                    <div class="row my-3">
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="" class="small">Bedrooms</label>
+                                            <select class="form-select" formControlName="Bedrooms" name="Bedrooms"
+                                                id="Bedrooms">
+                                                <option [ngValue]="null" selected>Select Bedrooms</option>
+                                                <ng-container *ngFor="let b of NoOfBedrooms;let i=index">
+                                                    <option [ngValue]="i+1">{{i+1}}</option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+
+
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="" class="small">Balconies</label>
+                                            <select formControlName="Balconies" class="form-select" name="" id="">
+                                                <option [ngValue]="null" selected>Select Balconies</option>
+                                                <ng-container *ngFor="let b of Balconies;let i=index">
+                                                    <option [ngValue]="i+1">{{i+1}}</option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row my-3">
+                                        <div class="col-md-4">
+                                            <label for="" class="small">Floor No.</label>
+                                            <select class="form-select" formControlName="FloorNo">
+                                                <option [value]="null" selected>Select Floor No.</option>
+                                                <ng-container *ngFor="let b of FloorNo;let i=index">
+                                                    <option [ngValue]="i">
+                                                        {{i==0?'LowerBasement':(i==1?'UpperBasement':(i==2?'GroundFloor':i-2))}}
+                                                    </option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">Furnished Status</label>
+                                            <select formControlName="FurnishedStatus" class="form-select" name="" id="">
+                                                <option [ngValue]="null" selected>Select furnished Staus</option>
+                                                <ng-container *ngFor="let item of FurnishedStatus">
+                                                    <option [value]="item">{{item}}</option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 my-3">
+                                        <label for="" class="small">Total Floors</label>
+                                        <select class="form-select" formControlName="TotalFloors" id="TotalFloors">
+                                            <option [ngValue]="null" selected>Select Total Floors</option>
+                                            <ng-container *ngFor="let b of TotalFloors;let i=index">
+                                                <option [ngValue]="i">{{i+1}}</option>
+                                            </ng-container>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 my-3">
+                                        <label class="small" for="Bathrooms">Bathrooms</label>
+                                        <select class="form-select" formControlName="Bathrooms" name="Bathrooms"
+                                            id="Bathrooms">
+                                            <option [ngValue]="null" selected>Select Bathrooms</option>
+                                            <ng-container *ngFor="let b of NoOfBathrooms;let i=index">
+                                                <option [ngValue]="i">{{i+1}}</option>
+                                            </ng-container>
+                                        </select>
+                                    </div>
+                                    <div class="" *ngIf="brsId===1">
+                                        <div class="">
+                                            <input class="mx-2" formControlName="food" type="checkbox" name="food"
+                                                id="food" />
+                                            <label for="food">food</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="Ac" type="checkbox" name="AC" id="AC" />
+                                            <label for="AC">AC</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="Wifi" type="checkbox" name="wifi"
+                                                id="wifi" />
+                                            <label for="wifi">Wifi</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="SundayMeal" type="checkbox"
+                                                name="sundaymeal" id="sundaymeal" />
+                                            <label for="sundaymeal">sunday Meal</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="Laundry" type="checkbox" name="Laundry"
+                                                id="Laundry" />
+                                            <label for="Laundry">Laundry</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="ElectricCharge" type="checkbox"
+                                                name="ElectriCharge" id="ElectriCharge" />
+                                            <label for="ElectriCharge">Electric Charge</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="PowerBackup" type="checkbox"
+                                                name="powerbackup" id="powerbackup" />
+                                            <label for="powerbackup">Power Backup</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="mx-2" formControlName="Lift" type="checkbox" name="Lift"
+                                                id="Lift" />
+                                            <label for="Lift">Lift</label>
+                                        </div>
+                                        <div class="d-md-flex mt-4">
+                                            For
+                                            <div class="mx-2">
+                                                <input type="radio" [value]="4" name="BgcId" id="Boy" class="mx-1"
+                                                    formControlName="BgcId" />
+                                                <label class="form-label" for="Boy">Boy</label>
+                                            </div>
+                                            <div class="mx-2">
+                                                <input type="radio" [value]="5" name="BgcId" id="Girl" class="mx-1"
+                                                    formControlName="BgcId" />
+                                                <label class="form-label" for="Girl">Girl</label>
+                                            </div>
+                                            <div class="mx-2">
+                                                <input type="radio" [value]="6" name="BgcId" id="CoEd" class="mx-1"
+                                                    formControlName="BgcId" />
+                                                <label class="form-label" for="CoEd">CoEd
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <ng-container *ngFor="let s in Sharing;let i=index">
+                                            <select formControlName="SharingId" name="sharing" id="sharing">
+                                                <option value="{{12+i}}">{{i+1}}</option>
+                                            </select>
+                                        </ng-container>
+                                    </div>
+                                    <div class="w-50" *ngIf="brsId!=2">
+                                        <label for="moticeperiod" class="small">Notice Period</label>
+                                        <input class="form-control" formControlName="NoticePeriodMonth"
+                                            placeholder="Enter Notice Period Month" type="number" name="noticeperiod"
+                                            id="noticeperiod" />
+                                    </div>
+                                    <div class="row mt-5">
+                                        <h2 class="fw-bold">Area</h2>
+                                        <span class="my-3">Provide either Carpet Area or Super Area</span>
+                                        <Label for="carpetArea" class="small">Carpet Area</Label>
+                                        <div class="col-md-6">
+                                            <input type="number" placeholder="carpet area" class="form-control"
+                                                formControlName="CarpetArea" name="carpetArea" id="carpetArea" />
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <select name="Measure" class="form-select" id="Measure">
+                                                <ng-container *ngFor="let m of AreaMeasure">
+                                                    <option class="small" value="m">{{m}}</option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+                                        <label for="superArea">Super Area</label>
+                                        <div class="col-md-6">
+                                            <input type="number" formControlName="SuperArea" placeholder="super area"
+                                                class="form-control" name="superArea" id="superArea" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select name="Measure" class=" form-select" id="Measure">
+                                                <ng-container *ngFor="let m of AreaMeasure">
+                                                    <option class="small" [ngValue]="m">{{m}}</option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row mt-5">
+                                        <h2 class="fw-bold">Transaction Type, Property Availability</h2>
+                                        <div class="d-md-flex">
+                                            <span class="fs-6">
+                                                Possession Status
+                                            </span>
+                                            <div class="mx-3">
+                                                <input type="radio" class="mx-1" name="posessionStatus"
+                                                    formControlName="posessionStatus" value="UnderConstruction"
+                                                    [(ngModel)]="PosessionStatus" id="UnderConstruction" />
+                                                <label class="" for="UnderConstruction"> Under Construction </label>
+                                            </div>
+                                            <div class="mx-3">
+                                                <input type="radio" class="mx-1" name="PosessionStatus"
+                                                    formControlName="posessionStatus" [(ngModel)]="PosessionStatus"
+                                                    value="ReadyToMove" id="UnderConstruction" />
+                                                <label class="" for="UnderConstruction"> Ready to Move </label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-6 mt-4">
+                                            <div class="" *ngIf="PosessionStatus==''||PosessionStatus=='ReadyToMove'">
+                                                <label for="AgeOfConstruction" class="small">Age of
+                                                    Construction</label><br>
+                                                <select formControlName="AgeOfConstruction" name="AgeOfConstruction"
+                                                    class="form-select" id="AgeOfConstruction">
+                                                    <option value="">Select Age of Construction</option>
+                                                    <ng-container *ngFor="let a of AgeOfConstruction;let i=index">
+                                                        <option [ngValue]="a">{{a}}</option>
+                                                    </ng-container>
+                                                </select>
+                                            </div>
+                                            <div class="" *ngIf="PosessionStatus=='UnderConstruction'">
+                                                <label for="AvailableFrom" class="small">Available From</label>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="form-select" name="Month" id="Month">
+                                                            <ng-container *ngFor="let m of Month">
+                                                                <option [ngValue]="m">{{m}}</option>
+                                                            </ng-container>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-select" name="Year" id="Year">
+                                                            <ng-container *ngFor="let y of Year;let i=index">
+                                                                <option [ngValue]="i+2019">{{i+2019}}</option>
+                                                            </ng-container>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="mt-5">
+                                            <h2 class="fw-bold mb-3">Price Details</h2>
+                                            <div class="d-md-flex">
+                                                <div class="">
+                                                    <label for="ExpectedPrice" class="small">Expected Price</label><br>
+                                                    <input formControlName="Price" placeholder="Expected Price"
+                                                        type="number" class="form-control" id="ExpectedPrice" />
+                                                </div>
+                                                <div class="mx-2">
+                                                    <label for="Token" class="small">Booking/Token Amount
+                                                        (optional)</label><br>
+                                                    <input formControlName="TokenAmount"
+                                                        placeholder="booking/Deposit Amount" type="number"
+                                                        class="form-control" id="Token" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5">
+                                            <h2 class="fw-bold mb-3">Photos</h2>
+                                            <label class="small fw-semibold" for="">It's Optional! But, don't forget to
+                                                upload
+                                                them later.</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container">
+                        <div class="row" formArrayName="images">
+                            <div class="col-md-6" *ngFor="let i of Image.controls;let j=index">
+                                <ng-container *ngFor="let img of ImageTypes;let i=index">
+                                    <ng-container *ngIf="i==j">
+                                        <label class="" for="">{{img.typeName}}</label>
+                                        <div class="" [formGroupName]="j">
+
+                                            <input type="text" required readonly (click)="f_input.click()"
+                                                class="form-control" placeholder="upload image of {{img.typeName}}" />
+                                            <input type="file" (change)="ImageToBuffer($event,j)" hidden #f_input />
+                                        </div>
+                                    </ng-container>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <input type="checkbox" /> I am posting this property 'exclusively' on Magicbricks
+                        <br>
+                        <input type="checkbox" /> I agree to Magicbricks T&C, Privacy Policy, & Cookie
+                        Policy <br>
+                        <input type="checkbox" /> I want to receive responses on <span class="fa fa-whatsapp"></span>
+                        Whatsapp <br><br>
+                        <button (click)="PostProperty()" class="btn btn-danger">
+                            Post Property
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

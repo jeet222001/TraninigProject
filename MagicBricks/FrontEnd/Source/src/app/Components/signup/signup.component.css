@@ -1,0 +1,46 @@
+.contentArea .rightPanel {
+    width: 65%;
+    min-height: 750px;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    background: url(../../../assets/bg-icon-1.png) repeat 25px top #f2f2f2;
+    transition: all 0.5s ease;
+    overflow: scroll;
+
+}
+
+.contentArea {
+    width: 100%;
+    min-height: 700px;
+    height: auto;
+    background: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+}
+.contentArea .leftPanel .leftCont ul li {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    margin: 0px;
+    /* padding: 10px 0 10px 19px; */
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 19px;
+    background: url(../../../assets/tickIcon.png) no-repeat left 16px;
+
+}
+
+.formCont {
+    width: 465px;
+    height: auto;
+    position: relative;
+    background-color: #fff;
+    margin: 37px auto 0;
+    padding: 22px 30px 47px 30px;
+    border-radius: 7px;
+    border: solid 1px #d7d7d7;
+    overflow: scroll;
+}
+
+

@@ -1,0 +1,244 @@
+.mb-srp__list {
+    width: 1024px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.mb-srp__card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    cursor: pointer;
+}
+img:hover{
+    transform: scale(1.039);
+}
+.mb-srp__card__photo {
+    height: auto;
+}
+.show-less {
+    height: 1rem;
+    overflow: hidden;
+    /* padding: 1rem; */
+}
+.readmore{
+    cursor: pointer;
+    margin-top: -40px;
+    z-index: auto;
+    background-color: #f5f5f5;
+}
+.mb-srp__card__photo__fig {
+    width: 100%;
+    height: 128px;
+    overflow: hidden;
+    position: relative;
+}
+.mb-srp__card__photo__fig--count {
+
+    height: 16px;
+    line-height: 14px;
+    padding: 2px 4px 2px 18px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+    position: absolute;
+    background: #303030 url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -23px -384px;
+}
+.mb-srp__card__photo__fig--post {
+    height: 18px;
+    line-height: 18px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: rgba(48,48,48,.7);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+}
+.mb-srp__card__photo__fig--count .sign-plus {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+.mb-srp__card__photo__fig--graphic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mb-srp__card__ads {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.mb-srp__card__ads--name {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mb-srp__card__info {
+    width: calc(100% - 216px);
+     position: relative;
+}
+
+.mb-srp__card__tooltip {
+    position: absolute;
+    z-index: 73;
+    display: none;
+    background: #fff;
+    cursor: default;
+}
+.mb-srp__card__sort--doat__list--item {
+    width: 100%;
+    line-height: 20px;
+    color: #303030;
+    font-size: 14px;
+    border-bottom: 1px solid #e8e8e8;
+    cursor: pointer;
+
+}
+
+.mb-srp__card__tags span {
+    width: auto;
+    height: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+}
+.mb-srp__card__tags--tick {
+    color: #009681;
+    border: 1px solid #b2dfd8;
+}
+.mb-srp__card__tags {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.mb-srp__card__tags span {
+    width: auto;
+    height: 16px;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.mb-srp__card__tags--tick {
+    color: #009681;
+    border: 1px solid #b2dfd8;
+}
+.mb-srp__card--title {
+    max-width: calc(100% - 80px);
+    color: #303030;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mb-srp__card__sort--icon {
+    width: 22px;
+    height: 20px;
+    background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -21px -150px;
+    display: block;
+    position: absolute;
+    right: 24px;
+    top: 2px;
+}
+.mb-srp__card__summary {
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    position: relative;
+}
+ .mb-srp__card__summary__list--item {
+    width: 100%;
+    border-right: 1px solid #d7d7d7;
+}
+.mb-srp__card__summary--label, .mb-srp__card__summary--value {
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mb-srp__card__summary--label {
+    color: #606060;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.mb-srp__card__summary--label, .mb-srp__card__summary--value {
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}   
+.mb-srp__card__summary--value {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 500;
+}
+.mb-srp__card__summary__action {
+    width: 24px;
+    height: auto;
+    background: hsla(0,0%,91%,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mb-srp__card--desc--text {
+    display: inline;
+}
+
+.mb-srp__card__price {
+    width: 100%;
+    height: auto;
+    align-self: flex-start;
+}
+
+.mb-srp__card__price--ico-info {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    top: 0;
+    background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -26px -120px;
+} 
+.mb-srp__action.action--single .mb-srp__action--btn {
+    width: 100%;
+}
+
+.mb-srp__action--btn.btn-red {
+    color: #fff;
+    background-color: #d8232a;
+    border: 1px solid #d8232a;
+}
+.propertyCard{
+    border: 1px solid rgb(189, 183, 183);
+}
+.propertyCard:hover{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.16)!important;
+}
