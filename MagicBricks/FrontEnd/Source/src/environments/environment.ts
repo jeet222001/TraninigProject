@@ -2,25 +2,25 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { HttpHeaders } from "@angular/common/http";
+import { HttpHeaders } from '@angular/common/http';
 
 export const environment = {
   production: false,
- apiURL: 'https://localhost:44365',
+  apiURL: 'https://localhost:44365/',
   endpoints: 'api/Country',
   CityendPoint: 'api/City',
   AppobjType: 'api/ApplicationObjectType',
   AddUser: 'bricks/Signup/users',
   otpVerify: 'bricks/Signup/verifyOtp',
   Login: 'api/login',
-  Property:'api/Properties',
-  PropertyDetails:'api/PropertyDetails',
-  Images:'api/Images',
-  path :"https://localhost:44365/Images/",
-  ContactOwner:"api/ContactOwner",
+  Property: 'api/Properties',
+  PropertyDetails: 'api/PropertyDetails',
+  Images: 'api/Images',
+  path: 'https://localhost:44365/Images/',
+  ContactOwner: 'api/ContactOwner',
   httpOptions: {
     headers: new HttpHeaders({
-      'content-Type': 'application/json'
+      'content-Type': 'application/json',
     }),
   },
 };
