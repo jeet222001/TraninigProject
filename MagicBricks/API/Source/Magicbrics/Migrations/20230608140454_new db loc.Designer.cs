@@ -4,14 +4,16 @@ using Magicbrics.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Magicbrics.Migrations
 {
     [DbContext(typeof(magicbrics2392jeetContext))]
-    partial class magicbrics2392jeetContextModelSnapshot : ModelSnapshot
+    [Migration("20230608140454_new db loc")]
+    partial class newdbloc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
